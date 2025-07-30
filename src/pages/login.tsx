@@ -4,7 +4,6 @@ import {Link, useNavigate} from "react-router-dom";
 import {Button} from "@heroui/button";
 import {Input} from "@heroui/input";
 import {useAuth} from "@/hooks/useAuth";
-import {addToast} from "@heroui/toast";
 import {Alert} from "@heroui/react";
 import {AuthHeader} from "@/components/AuthHeader";
 
@@ -34,12 +33,6 @@ export const LoginPage = () => {
 
         try {
             await signIn(data.email, data.password);
-
-            addToast({
-                title: "Welcome back!",
-                description: "You have successfully signed in.",
-                color: "success",
-            });
 
             navigate("/");
         } catch (err) {
