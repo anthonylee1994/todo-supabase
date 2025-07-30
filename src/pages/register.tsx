@@ -26,9 +26,7 @@ export const RegisterPage = () => {
         handleSubmit,
         formState: {errors},
         watch,
-    } = useForm<RegisterFormData>({
-        mode: "onChange", // This enables real-time validation
-    });
+    } = useForm<RegisterFormData>();
 
     const password = watch("password");
 

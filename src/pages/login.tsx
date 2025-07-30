@@ -23,9 +23,7 @@ export const LoginPage = () => {
         reset,
         handleSubmit,
         formState: {errors},
-    } = useForm<LoginFormData>({
-        mode: "onChange", // This enables real-time validation
-    });
+    } = useForm<LoginFormData>();
 
     const onSubmit = async (data: LoginFormData) => {
         setLoading(true);
