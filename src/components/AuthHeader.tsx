@@ -3,7 +3,7 @@ interface Props {
     description: string;
 }
 
-export const AuthHeader = ({title, description}: Props) => {
+export const AuthHeader: React.FC<Props> = ({title, description}) => {
     return (
         <div className="mb-8 text-center">
             <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600">

@@ -13,7 +13,7 @@ interface LoginFormData {
 }
 
 export const LoginPage = () => {
-    const {signIn, session} = useAuth();
+    const {signIn} = useAuth();
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState<string | null>(null);
     const navigate = useNavigate();
@@ -40,12 +40,6 @@ export const LoginPage = () => {
             setLoading(false);
         }
     };
-
-    React.useEffect(() => {
-        if (session) {
-            navigate("/");
-        }
-    }, [session]);
 
     return (
         <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4">

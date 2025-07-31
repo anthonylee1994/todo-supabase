@@ -1,6 +1,6 @@
 import React from "react";
 import {useForm} from "react-hook-form";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, Navigate, useNavigate} from "react-router-dom";
 import {Button} from "@heroui/button";
 import {Input} from "@heroui/input";
 import {useAuth} from "@/hooks/useAuth";
@@ -53,11 +53,9 @@ export const RegisterPage = () => {
         }
     };
 
-    React.useEffect(() => {
-        if (session) {
-            navigate("/");
-        }
-    }, [session]);
+    if (session) {
+        return <Navigate to="/" />;
+    }
 
     return (
         <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4">
