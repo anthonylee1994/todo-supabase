@@ -20,7 +20,7 @@ export const TodoList = () => {
                 <Card key={todo.id} className={`transition-all duration-200 ${todo.done ? "border-gray-200 bg-gray-50" : "border-gray-200 bg-white hover:border-blue-300"}`}>
                     <CardBody className="py-4">
                         <div className="flex items-center gap-4">
-                            <Checkbox isSelected={!!todo.done} onValueChange={() => handleToggleTodo(todo.id)} color="success" size="lg" />
+                            <Checkbox isSelected={Boolean(todo.done)} onValueChange={() => handleToggleTodo(todo.id)} size="lg" />
                             <div className="flex-1">
                                 <p className={`text-lg ${todo.done ? "text-gray-500 line-through" : "text-gray-900"}`}>{todo.title}</p>
                             </div>
