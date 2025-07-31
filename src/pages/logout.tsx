@@ -1,13 +1,17 @@
 import React from "react";
 import {useAuth} from "@/hooks/useAuth";
-import {Navigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export const LogoutPage = () => {
     const {signOut} = useAuth();
+    const navigate = useNavigate();
 
     React.useEffect(() => {
-        signOut();
-    }, []);
+        (async () => {
+            await signOut();
+            navigate("/login");
+        })();
+    }, [signOut, navigate]);
 
-    return <Navigate to="/login" />;
+    return null;
 };
